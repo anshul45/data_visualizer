@@ -1,0 +1,27 @@
+
+Visulize:-
+
+Intensity  :- Line Chat
+Likelihood :- Line Chat
+Relevance :- Line Chat
+Year
+Country
+Topics
+Region
+City 
+
+
+
+
+Filters :- 
+
+Add end year filter in the dashboard
+Add topics filters in the dashboard
+Add sector filter in the dashboard
+Add region filter in the dashboard
+Add PEST filter in the dashboard
+Add Source filter in the dashboard
+Add SWOT filter in the dashboard
+Country
+City
+Any other control or filters that you can add from the data, best of your knowledge 

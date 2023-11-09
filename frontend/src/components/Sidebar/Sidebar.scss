@@ -1,0 +1,44 @@
+.Sidebar{
+ 
+    .Logo{
+        display: flex;
+        align-items: center;
+        padding: 4px;
+        .logo_img{
+            width: 70px;
+            height: 70px;
+        }
+        .logo_title{
+            font-size: medium;
+        }
+    }
+
+        .Contents{
+            .all_categories{
+                .category-header{
+                    font-size: larger;
+                    font-weight: bolder;
+                    cursor: pointer;
+                    padding: 15px 22px;
+                  
+                }
+                .subcategories{
+                    padding: 5px;
+                    display: flex;
+                    flex-wrap: wrap;
+                    gap: 20px;
+                    justify-content: space-evenly;
+                .subcategory{
+                    border: 1px solid black;
+                    padding: 4px 7px;
+                    border-radius: 7px;
+                    text-align: center;
+                }
+                }
+            }
+        }
+    
+
+    
+   
+}
