@@ -6,8 +6,7 @@ const Sidebar = () => {
 
   const sidebarData = [
     "country",
-    "start_year",
-    "end_year",
+    "year",
     "impact",
     "pestle",
     "region",
@@ -18,18 +17,6 @@ const Sidebar = () => {
   ];
 
   const categories = {
-    end_year: [
-      "2016",
-      "2017",
-      "2018",
-      "2019",
-      "2020",
-      "2021",
-      "2025",
-      "2030",
-      "2035",
-      "2040",
-    ],
     topic: [
       "gas",
       "oil",
@@ -97,7 +84,7 @@ const Sidebar = () => {
       "United Kingdom",
       "United States of America",
     ],
-    start_year: [2016, 2017, 2018, 2020],
+    year: [2016, 2017, 2018, 2019, 2020],
     relevance: [1, 2, 3, 4, 5, 6],
     impact: [3, 4],
   };
@@ -122,7 +109,7 @@ const Sidebar = () => {
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </div>
             {openCategory === category && categories[category] && (
-              <div className="p-1 flex gap-5 flex-wrap justify-evenly">
+              <div className="p-1 flex pl-5 gap-5 flex-wrap justify-evenly">
                 {categories[category].map((subCategory, index) => (
                   <div
                     className="border-2 py-1 px-2 text-center rounded-lg"

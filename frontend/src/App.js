@@ -1,11 +1,12 @@
 import React from "react";
 import Home from "./Page/Home";
-
+import { Provider } from "react-redux";
+import store from "./utils/store";
 const App = () => {
   return (
-    <div>
+    <Provider store={store}>
       <Home />
-    </div>
+    </Provider>
   );
 };
 

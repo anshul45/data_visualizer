@@ -6,7 +6,6 @@ Likelihood :- SimpleRadialBarChart
 Relevance :- SimpleRadialBarChart
 Year :- Line Chart
 Country :- Bar Chart or Pie Chart
-Topics :- Word Cloud
 Region :-Bar Chart or Pie Chart
 
 
