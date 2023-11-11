@@ -1,14 +1,13 @@
 
 Visulize:-
 
-Intensity  :- Line Chat
-Likelihood :- Line Chat
-Relevance :- Line Chat
-Year
-Country
-Topics
-Region
-City 
+Intensity  :- SimpleRadialBarChart
+Likelihood :- SimpleRadialBarChart
+Relevance :- SimpleRadialBarChart
+Year :- Line Chart
+Country :- Bar Chart or Pie Chart
+Topics :- Word Cloud
+Region :-Bar Chart or Pie Chart
 
 
 

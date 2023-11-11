@@ -1,27 +1,25 @@
 import React from "react";
-import "./Home.scss";
 import Sidebar from "../components/Sidebar/Sidebar";
-import Chat from "../components/Chat/Chat";
+import RadialChart from "../components/radialBarChart/RadialChart";
 
 const Home = () => {
   return (
-    <div className="Home">
-      <div className="left">
+    <div className="flex gap-5">
+      <div className="flex-initial">
         <Sidebar />
       </div>
-      <div className="right">
-        <div className="head">Data Visulizer Dashboard.</div>
-        <div className="allChats">
-          <div className="box box1">box1</div>
-          <div className="box box2">
-            <Chat />
+      <div className="flex-1 flex flex-col">
+        <div className="p-6">Data Visulizer Dashboard.</div>
+        <div className="pt-6 px-6">
+          <div className="p-5 rounded-lg border-2 w-96 h-96">
+            <RadialChart />
           </div>
-          <div className="box box3">likelyhood</div>
-          <div className="box box4">box4</div>
-          <div className="box box5">box5</div>
-          <div className="box box6">box6</div>
-          <div className="box box7">box7</div>
-          <div className="box box8">box8</div>
+          <div className="p-5 rounded-lg border-2 "></div>
+          <div className="p-5 rounded-lg border-2 "> intensity</div>
+          <div className="p-5 rounded-lg border-2 "> intensity</div>
+          <div className="p-5 rounded-lg border-2">box5</div>
+          <div className="p-5 rounded-lg border-2">box6</div>
+          <div className="p-5 rounded-lg border-2">box7</div>
         </div>
       </div>
     </div>

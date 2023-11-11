@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "./Sidebar.scss";
 import Logo from "../../assets/Logo.png";
 
 const Sidebar = () => {
@@ -108,24 +107,27 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="Sidebar">
-      <div className="Logo">
-        <img className="logo_img" src={Logo} alt="Logo" />
-        <h1 className="logo_title">VisualVibe</h1>
+    <div>
+      <div className="flex items-center p-1">
+        <img className="w-16 h-16" src={Logo} alt="Logo" />
+        <h1 className="text-base">VisualVibe</h1>
       </div>
-      <div className="Contents">
+      <div>
         {sidebarData.map((category) => (
-          <div className="all_categories" key={category}>
+          <div key={category}>
             <div
-              className="category-header"
+              className="text-3xl font-bold py-4 px-6"
               onClick={() => handleClick(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </div>
             {openCategory === category && categories[category] && (
-              <div className="subcategories">
+              <div className="p-1 flex gap-5 flex-wrap justify-evenly">
                 {categories[category].map((subCategory, index) => (
-                  <div className="subcategory" key={index}>
+                  <div
+                    className="border-2 py-1 px-2 text-center rounded-lg"
+                    key={index}
+                  >
                     {subCategory}
                   </div>
                 ))}
