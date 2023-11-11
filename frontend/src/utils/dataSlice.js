@@ -4,10 +4,21 @@ const dataSlice = createSlice({
   name: "data",
   initialState: {
     allData: data,
+    initialData: data,
   },
-  reducers: {},
+  reducers: {
+    filterData: (state, action) => {
+      const { property, value } = action.payload;
+      state.allData = state.initialData.filter(
+        (item) =>
+          item[property] === value ||
+          (property === "year" && item["start_year"] === value) ||
+          item["last_year"] === value
+      );
+    },
+  },
 });
 
-export const {} = dataSlice.actions;
+export const { filterData } = dataSlice.actions;
 
 export default dataSlice.reducer;

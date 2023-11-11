@@ -22,19 +22,23 @@ const Chat4 = () => {
     return acc.sort((a, b) => b.count - a.count).slice(0, 10);
   }, []);
 
+  if (!filteredData.length)
+    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
   return (
-    <ResponsiveContainer width="100%" height="85%">
-      <BarChart
-        data={filteredData}
-        margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
-      >
-        <CartesianGrid strokeDasharray="3 3" />
-        <XAxis dataKey="topic" />
-        <Tooltip />
-        <Bar dataKey="start_year" fill="#8884d8" />
-        <Bar dataKey="end_year" fill="#82ca9d" />
-      </BarChart>
-    </ResponsiveContainer>
+    <>
+      <ResponsiveContainer width="100%" height="85%">
+        <BarChart
+          data={filteredData}
+          margin={{ top: 20, right: 30, left: 20, bottom: 5 }}
+        >
+          <CartesianGrid strokeDasharray="3 3" />
+          <XAxis dataKey="topic" />
+          <Tooltip />
+          <Bar dataKey="start_year" fill="#8884d8" />
+          <Bar dataKey="end_year" fill="#82ca9d" />
+        </BarChart>
+      </ResponsiveContainer>
+    </>
   );
 };
 

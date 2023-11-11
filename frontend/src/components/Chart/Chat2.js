@@ -43,6 +43,8 @@ const Chat2 = () => {
 
     return null;
   };
+  if (!relevanceData.length)
+    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
 
   return (
     <ResponsiveContainer width="90%" height="84%">

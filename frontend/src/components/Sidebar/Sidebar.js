@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.png";
+import { useDispatch } from "react-redux";
+import { filterData } from "../../utils/dataSlice";
 
 const Sidebar = () => {
+  const dispatch = useDispatch();
   const [openCategory, setOpenCategory] = useState(null);
 
   const sidebarData = [
@@ -93,27 +96,32 @@ const Sidebar = () => {
     setOpenCategory(category === openCategory ? null : category);
   };
 
+  const handleDispatch = (property, value) => {
+    dispatch(filterData({ property, value }));
+  };
+
   return (
     <div>
       <div className="flex items-center p-1">
         <img className="w-16 h-16" src={Logo} alt="Logo" />
         <h1 className="text-base">VisualVibe</h1>
       </div>
-      <div>
+      <div className="">
         {sidebarData.map((category) => (
           <div key={category}>
             <div
-              className="text-3xl font-bold py-4 px-6"
+              className="text-3xl font-bold py-4 px-6 cursor-pointer"
               onClick={() => handleClick(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}
             </div>
             {openCategory === category && categories[category] && (
-              <div className="p-1 flex pl-5 gap-5 flex-wrap justify-evenly">
+              <div className="p-1 flex pl-5 gap-2 flex-wrap">
                 {categories[category].map((subCategory, index) => (
                   <div
-                    className="border-2 py-1 px-2 text-center rounded-lg"
+                    className="border-2 py-1 px-2 text-center rounded-lg cursor-pointer"
                     key={index}
+                    onClick={() => handleDispatch(category, subCategory)}
                   >
                     {subCategory}
                   </div>

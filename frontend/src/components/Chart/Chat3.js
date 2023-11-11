@@ -17,6 +17,9 @@ const Chat3 = ({ data, value }) => {
     return null;
   };
 
+  if (!data.length)
+    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
+
   return (
     <ResponsiveContainer width="100%" height="85%">
       <BarChart width={150} height={40} data={data}>

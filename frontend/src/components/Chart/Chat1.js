@@ -32,13 +32,19 @@ const Chat1 = () => {
     return null;
   };
 
+  if (!intensityData.length)
+    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
+
   return (
-    <ResponsiveContainer width="95%" height="50%">
-      <LineChart width={30} height={50} data={intensityData}>
-        <Line type="monotone" dataKey="intensity" dot={false} />
-        <Tooltip content={<CustomTooltip />} />
-      </LineChart>
-    </ResponsiveContainer>
+    <>
+      {!intensityData && <div>Sorry no data!</div>}
+      <ResponsiveContainer width="95%" height="50%">
+        <LineChart width={30} height={50} data={intensityData}>
+          <Line type="monotone" dataKey="intensity" dot={false} />
+          <Tooltip content={<CustomTooltip />} />
+        </LineChart>
+      </ResponsiveContainer>
+    </>
   );
 };
 
