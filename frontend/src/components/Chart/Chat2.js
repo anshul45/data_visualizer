@@ -11,7 +11,7 @@ const Chat2 = () => {
   const data = useSelector((store) => store.data.allData);
 
   const relevanceCounts = data.reduce((acc, item) => {
-    if (item.relevance !== "") {
+    if (item.relevance !== "" && item.relevance !== null) {
       acc[item.relevance] = (acc[item.relevance] || 0) + 1;
     }
     return acc;
@@ -44,7 +44,11 @@ const Chat2 = () => {
     return null;
   };
   if (!relevanceData.length)
-    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
+    return (
+      <div className="font-extrabold text-3xl mt-9 text-center">
+        Sorry no data!
+      </div>
+    );
 
   return (
     <ResponsiveContainer width="90%" height="84%">

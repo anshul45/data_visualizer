@@ -15,7 +15,13 @@ const Chat4 = () => {
   const filteredData = data.reduce((acc, item) => {
     const existingItem = acc.find((i) => i.topic === item.topic);
 
-    if (!existingItem && item.start_year !== "" && item.end_year !== "") {
+    if (
+      !existingItem &&
+      item.start_year !== "" &&
+      item.end_year !== "" &&
+      item.start_year !== null &&
+      item.end_year !== null
+    ) {
       acc.push(item);
     }
 
@@ -33,7 +39,7 @@ const Chat4 = () => {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="topic" />
-          <Tooltip />
+          <Tooltip cursor={{ fill: "none" }} />
           <Bar dataKey="start_year" fill="#8884d8" />
           <Bar dataKey="end_year" fill="#82ca9d" />
         </BarChart>

@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import Logo from "../../assets/Logo.png";
 import { useDispatch } from "react-redux";
-import { filterData } from "../../utils/dataSlice";
+import { filterData, refresh } from "../../utils/dataSlice";
 
 const Sidebar = () => {
   const dispatch = useDispatch();
@@ -102,15 +102,18 @@ const Sidebar = () => {
 
   return (
     <div>
-      <div className="flex items-center p-1">
+      <div
+        className="flex items-center p-1 cursor-pointer"
+        onClick={() => dispatch(refresh())}
+      >
         <img className="w-16 h-16" src={Logo} alt="Logo" />
-        <h1 className="text-base">VisualVibe</h1>
+        <h1 className="text-base font-medium">VisualVibe</h1>
       </div>
       <div className="">
         {sidebarData.map((category) => (
           <div key={category}>
             <div
-              className="text-3xl font-bold py-4 px-6 cursor-pointer"
+              className="text-3xl font-semibold pl-5 py-3 cursor-pointer"
               onClick={() => handleClick(category)}
             >
               {category.charAt(0).toUpperCase() + category.slice(1)}

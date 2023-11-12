@@ -6,7 +6,7 @@ const Chat1 = () => {
   const data = useSelector((store) => store.data.allData);
 
   const intensityCounts = data.reduce((acc, item) => {
-    if (item.intensity !== "") {
+    if (item.intensity !== "" && item.intensity !== null) {
       acc[item.intensity] = (acc[item.intensity] || 0) + 1;
     }
     return acc;
@@ -33,7 +33,11 @@ const Chat1 = () => {
   };
 
   if (!intensityData.length)
-    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
+    return (
+      <div className="font-extrabold text-3xl mt-9 text-center">
+        Sorry no data!
+      </div>
+    );
 
   return (
     <>

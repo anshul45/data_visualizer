@@ -1,26 +1,52 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Sidebar from "../components/Sidebar/Sidebar";
 import Chat1 from "../components/Chart/Chat1";
 import Chat2 from "../components/Chart/Chat2";
 import Chat3 from "../components/Chart/Chat3";
 import Chat4 from "../components/Chart/Chat4";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
 import { generateFilterData } from "../utils/filterData";
+import { setData } from "../utils/dataSlice";
+import axios from "axios";
 
 const Home = () => {
+  const [loading, setLoading] = useState(true);
+  const dispatch = useDispatch();
+
+  const fetchData = async () => {
+    try {
+      const response = await axios.get("http://localhost:3001/api/v1/data");
+      if (!response || !response.data) {
+        throw new Error(`Invalid response from server`);
+      }
+      setLoading(false);
+      dispatch(setData(response.data));
+    } catch (error) {
+      throw error;
+    }
+  };
+
+  useEffect(() => {
+    fetchData();
+  }, [dispatch]);
+
   const data = useSelector((store) => store.data.allData);
   const relevanceData = generateFilterData(data, "relevance");
   const countryData = generateFilterData(data, "country");
   const topicData = generateFilterData(data, "topic");
   const regionData = generateFilterData(data, "region");
-
+  if (loading) {
+    return (
+      <div className="mt-72 font-semibold text-3xl text-center">Loading...</div>
+    );
+  }
   return (
-    <div className="flex gap-5 pb-7">
-      <div className="flex-[1] flex-wrap">
+    <div className="flex">
+      <div className="flex-[1] flex-wrap  bg-red-300">
         <Sidebar />
       </div>
-      <div className="flex-[5] flex flex-col">
-        <div className="p-6">Data Visulizer Dashboard.</div>
+      <div className="flex-[5] flex flex-col bg-green-300 pb-7">
+        <div className="p-6 font-medium">Data Visulizer Dashboard</div>
         <div className="pt-6 px-6 grid gap-5 grid-cols-4 auto-rows-[minmax(220px,auto)]">
           <div className="p-5 rounded-lg border-2 flex flex-col items-center gap-7">
             <h1 className="">Intensity</h1>

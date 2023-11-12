@@ -1,10 +1,9 @@
 import { createSlice } from "@reduxjs/toolkit";
-import { data } from "../assets/data";
 const dataSlice = createSlice({
   name: "data",
   initialState: {
-    allData: data,
-    initialData: data,
+    allData: [],
+    initialData: [],
   },
   reducers: {
     filterData: (state, action) => {
@@ -16,9 +15,15 @@ const dataSlice = createSlice({
           item["last_year"] === value
       );
     },
+    setData: (state, action) => {
+      state.allData = state.initialData = action.payload;
+    },
+    refresh: (state, action) => {
+      state.allData = state.initialData;
+    },
   },
 });
 
-export const { filterData } = dataSlice.actions;
+export const { filterData, setData, refresh } = dataSlice.actions;
 
 export default dataSlice.reducer;

@@ -2,7 +2,7 @@ export const generateFilterData = (data, property) => {
   const counts = data.reduce((acc, item) => {
     const key = item[property];
 
-    if (key !== "") {
+    if (key !== "" && key !== null) {
       acc[key] = (acc[key] || 0) + 1;
     }
 
