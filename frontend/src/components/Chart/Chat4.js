@@ -29,7 +29,11 @@ const Chat4 = () => {
   }, []);
 
   if (!filteredData.length)
-    return <div className="font-extrabold text-3xl mt-9">Sorry no data!</div>;
+    return (
+      <div className="font-extrabold text-3xl mt-9 text-black p-3">
+        Sorry no data!
+      </div>
+    );
   return (
     <>
       <ResponsiveContainer width="100%" height="85%">
@@ -39,7 +43,13 @@ const Chat4 = () => {
         >
           <CartesianGrid strokeDasharray="3 3" />
           <XAxis dataKey="topic" />
-          <Tooltip cursor={{ fill: "none" }} />
+          <Tooltip
+            cursor={{ fill: "none" }}
+            contentStyle={{
+              backgroundColor: "rgb(229 229 229 / var(--tw-bg-opacity))",
+              border: "none",
+            }}
+          />
           <Bar dataKey="start_year" fill="#8884d8" />
           <Bar dataKey="end_year" fill="#82ca9d" />
         </BarChart>

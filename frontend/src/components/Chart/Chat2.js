@@ -32,7 +32,7 @@ const Chat2 = () => {
       const { relevance, count, fill } = payload[0].payload;
       console.log(fill);
       return (
-        <div className="custom-tooltip">
+        <div className="custom-tooltip bg-neutral-200">
           <p
             style={{ color: fill, font: "bold" }}
           >{`likelyhood: ${relevance}`}</p>
@@ -45,7 +45,7 @@ const Chat2 = () => {
   };
   if (!relevanceData.length)
     return (
-      <div className="font-extrabold text-3xl mt-9 text-center">
+      <div className="font-extrabold text-3xl mt-9 text-center text-black p-3">
         Sorry no data!
       </div>
     );

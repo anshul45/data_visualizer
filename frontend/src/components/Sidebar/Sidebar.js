@@ -122,7 +122,7 @@ const Sidebar = () => {
               <div className="p-1 flex pl-5 gap-2 flex-wrap">
                 {categories[category].map((subCategory, index) => (
                   <div
-                    className="border-2 py-1 px-2 text-center rounded-lg cursor-pointer"
+                    className="border-[1px] border-black py-1 px-2 text-center rounded-lg cursor-pointer"
                     key={index}
                     onClick={() => handleDispatch(category, subCategory)}
                   >

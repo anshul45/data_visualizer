@@ -22,7 +22,7 @@ const Chat1 = () => {
       const { intensity, count } = payload[0].payload;
 
       return (
-        <div className="custom-tooltip">
+        <div className="custom-tooltip bg-neutral-200 p-3 text-blue-700">
           <p>{`Intensity: ${intensity}`}</p>
           <p>{`Count: ${count}`}</p>
         </div>
@@ -34,7 +34,7 @@ const Chat1 = () => {
 
   if (!intensityData.length)
     return (
-      <div className="font-extrabold text-3xl mt-9 text-center">
+      <div className="font-extrabold text-3xl mt-9 text-center text-black">
         Sorry no data!
       </div>
     );

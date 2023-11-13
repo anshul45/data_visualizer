@@ -7,9 +7,9 @@ const Chat3 = ({ data, value }) => {
       const chartData = payload[0].payload;
 
       return (
-        <div className="custom-tooltip">
-          <p className="text-green-600">{`${value}: ${chartData[value]}`}</p>
-          <p className="text-green-600">{`Count: ${chartData.count}`}</p>
+        <div className="custom-tooltip bg-neutral-200 text-blue-700">
+          <p>{`${value}: ${chartData[value]}`}</p>
+          <p>{`Count: ${chartData.count}`}</p>
         </div>
       );
     }
@@ -19,7 +19,7 @@ const Chat3 = ({ data, value }) => {
 
   if (!data.length)
     return (
-      <div className="font-extrabold text-3xl mt-9 text-center">
+      <div className="font-extrabold text-3xl mt-9 text-center text-black p-3">
         Sorry no data!
       </div>
     );
