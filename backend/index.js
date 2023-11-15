@@ -5,7 +5,13 @@ import dataRoutes from "./routes/dataRoutes.js";
 import cors from "cors";
 
 const app = express();
-app.use(cors({ origin: true }));
+app.use(
+  cors({
+    origin: "",
+    credentials: true,
+    methods: ["GET", "POST", "PUT", "DELETE"],
+  })
+);
 
 app.use("/api/v1/data", dataRoutes);
 
