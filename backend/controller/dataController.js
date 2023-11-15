@@ -11,6 +11,6 @@ export const getAllData = async (req, res) => {
 
 //will consider this also but i think we can validate data in frontend..
 
-export const getSpecificData = async (req, res) => {
-  res.status(200).send("It's Working...");
-};
+// export const getSpecificData = async (req, res) => {
+//   res.status(200).send("It's Working...");
+// };
