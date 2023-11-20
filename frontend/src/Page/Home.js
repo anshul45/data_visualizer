@@ -15,7 +15,9 @@ const Home = () => {
 
   const fetchData = async () => {
     try {
-      const response = await axios.get("http://localhost:3001/api/v1/data");
+      const response = await axios.get(
+        "https://lively-seal-fez.cyclic.app/api/v1/data"
+      );
       if (!response || !response.data) {
         throw new Error(`Invalid response from server`);
       }
